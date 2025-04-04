@@ -9,6 +9,7 @@
 </head>
 <body>
     <form action="#" method="post">
+        {%csrf_token%}
         <label  for="1">Nom</label>
         <input id="1" type ="text">
         <label  for="2">Email</label>
@@ -19,6 +20,11 @@
         <textarea id="4" name="Message"></textarea>
         <input type="submit">
 
+{% if nom is not None %}
+    <h1> Hello {{nom}} </h1>
+{% else %}
+    <h1> Hello world </h1>
+{% endif %}
     </form>
 
 
